@@ -1,7 +1,5 @@
 import puppeteer from 'puppeteer';
 import { promises as fs } from 'fs';
-import glob from 'glob';
-import { promisify } from 'util';
 import path from 'path';
 import { v1 as uuid } from 'uuid';
 
@@ -16,10 +14,6 @@ async function* search(dir, pattern) {
     }
   }
 }
-
-// find('./kits', /\.html?$/i,function(filename){
-// 	console.log(filename);
-// });
 
 async function run() {
 	const browser = await puppeteer.launch({args: [
